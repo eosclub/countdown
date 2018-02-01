@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EOS.io launch countdown</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <script src="https://cdn.rawgit.com/hilios/jQuery.countdown/2.2.0/dist/jquery.countdown.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style type="text/css">
+      body {
+        padding-top: 50px;
+        background-color: #000;
+      }
+      .starter-template {
+        padding: 40px 15px;
+        text-align: center;
+        color: #fff;
+      }
+      .panel {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #btn-reset {
+        margin-right: 10px;
+      }
+      #clock {
+        margin-bottom: 0;
+        color:#000;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+
+  <div class="container">
+    <div class="starter-template">
+      <img src="https://d340lr3764rrcr.cloudfront.net/Images/eos_logo@2x.png" />
+      <h1>EOS.io launch countdown</h1>
+      <p class="lead">This is a simple countdown that tells you how much you have to wait before the EOS ICO ends.
+        <br> It will continue after the launch of the main network, I hope to come back in a few years living in a decentralized world.</p>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="lead" id="clock"></div>
+        </div>
+      </div>
+
+      <a href="https://eos.io" target="_blank" class="btn btn-primary" id="btn-reset">
+        Go to mainsite
+      </a>
+
+    </div>
+  </div>
+  <script type="text/javascript">
+    // EOS ICO ends!
+    function getLaunchDate() {
+      return new Date(new Date("2018/06/01 22:59:59"));
+    }
+
+    var $clock = $('#clock');
+
+    $clock.countdown(getLaunchDate(), function(event) {
+      $(this).html(event.strftime('%D days %H:%M:%S'));
+    });
+
+  </script>
+  </body>
+  </html>
